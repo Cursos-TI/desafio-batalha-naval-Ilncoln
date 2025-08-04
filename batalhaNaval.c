@@ -26,9 +26,34 @@ int main() {
     tabuleiro[8][3] = 3;
 
     //navio 2
-    tabuleiro[0][7] = 3;
-    tabuleiro[1][7] = 3;
-    tabuleiro[2][7] = 3;
+    tabuleiro[0][6] = 3;
+    tabuleiro[1][6] = 3;
+    tabuleiro[2][6] = 3;
+
+    //navio 3 
+    for (int i = 0; i < 3; i++)
+    {
+        if (tabuleiro[i][i] % 2 == 0)
+        {
+            tabuleiro[i][i] = 3;
+        }
+    }
+
+    //navio 4
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10 && j < 6  ; j++)
+        {
+            if (i + j == 10 - 1)
+            {
+                tabuleiro[i][j] = 3;
+                tabuleiro[9][0] = 0;
+                tabuleiro[7][2] = 0;
+            }  
+        }
+    }
+    
+    
 
     for (int i = 0; i < 10; i++)
     {
